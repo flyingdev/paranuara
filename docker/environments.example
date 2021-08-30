@@ -1,0 +1,7 @@
+DB_USER=postgres
+DB_PASS=postgres
+PG_PASSWORD=postgres
+DB_NAME=postgres
+DB_HOST=db_pg
+DB_PORT=5432
+DEBUG=1

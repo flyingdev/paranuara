@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db_pg:
+    image: "sameersbn/postgresql:12-20200524"
+    container_name: db_pg
+    hostname: db_pg
+    ports:
+      - 5432:5432
+    env_file: "./docker/environments"
+  app:
+    container_name: app
+    hostname: app
+    build: ./
+    ports:
+      - 8000:8000
+    depends_on:
+      - db_pg
+    env_file: "./docker/environments"
+    volumes:
+      - ./:/app

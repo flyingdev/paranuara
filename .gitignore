@@ -1,0 +1,46 @@
+# IDEs
+.idea/
+.vscode
+
+# virtual env
+venv/
+
+# Python compiled byte code
+*.pyc
+__pycache__/
+
+# Node modules
+node_modules/
+yarn.lock
+npm-debug.log
+package-lock.json
+
+# SQLite3 database
+*.sqlite
+*.sqlite3
+
+# ignore fixtures
+fixtures/
+
+.DS_Store
+# temporary
+yarn-debug.log*
+yarn-error.log*
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+
+# environment
+.env
+
+# csv file
+.csv
+
+# exception
+!.gitkeep
+
+# temp
+temp/
+
+# public images
+app/static/images
