@@ -21,7 +21,7 @@ class TestPerson(TestCase):
     def test_mutual_friends(self):
         person_1 = baker.make('person.Person', has_died=False)
         person_2 = baker.make('person.Person', has_died=False, eye_color=models.Person.EYE_COLOR_BROWN)
-        person_3 = baker.make('person.Person', has_died=False)
+        person_3 = baker.make('person.Person', has_died=False, eye_color=models.Person.EYE_COLOR_BLUE)
         person_4 = baker.make('person.Person', has_died=False)
         person_5 = baker.make('person.Person', has_died=False)
         person_6 = baker.make('person.Person', has_died=False)
@@ -44,3 +44,5 @@ class TestPerson(TestCase):
         })
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIn('friends', response.json())
+        self.assertListEqual(response.json().get('friends'), [person_2.id])
